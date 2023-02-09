@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  transition: all 0.3s ease;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+h2 {
+  vertical-align: center;
+  
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: red;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+.menu li a{
+  text-decoration: none;
+  color: white;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+
+
+
+
+
+
+:root{
+  --white: #fff;
+  --black: #24292d;
+  /* --nav-main: #4070f4; */
+  --nav-main:  red;
+  --switchers-main: #0b3cc1;
+  --light-bg: #F0F8FF;
+}
+
+ .appearance .light-dark,
+ .appearance .icons{
+  height: 50px;
+  width: 50px;
+  border-radius: 6px;
+  line-height: 50px;
+  text-align: center;
+  color: var(--white);
+  font-size: 20px;
+  background: var(--switchers-main);
+  cursor: pointer;
+}
+.appearance .light-dark i,
+.appearance .icons i{
+  opacity: 1;
+}
+.appearance .light-dark:hover i,
+.appearance .icons:hover i{
+  opacity: 1;
+}
+.appearance .light-dark:hover{
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1)
+}
+.appearance .light-dark i{
+  height: 100%;
+  width: 100%;
+}
+ .appearance .color-icon{
+   position: relative;
+ }
+ .appearance .icons{
+   width: 70px;
+   height: 50px;
+   margin-left: 14px;
+ }
+ .appearance .color-box{
+   position: absolute;
+   bottom: -133px;
+   right: 0;
+   min-height: 100px;
+   background: var(--white);
+   padding: 16px 20px 20px 20px;
+   border-radius: 6px;
+   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+   opacity: 0;
+   pointer-events: none;
+ }
+ .color-box::before{
+   content: '';
+   position: absolute;
+   top: -10px;
+   right: 20px;
+   height: 30px;
+   width: 30px;
+   border-radius: 50%;
+   background: var(--white);
+   transform: rotate(45deg);
+ }
+ .color-icon.open .color-box{
+   opacity: 1;
+   pointer-events: auto;
+ }
+  .color-icon.open .arrow{
+    transform: rotate(-180deg);
+  }
+ .appearance .color-box h3{
+   font-size: 16px;
+   font-weight: 600;
+   display: block;
+   color: var(--nav-main);
+   text-align: left;
+   white-space: nowrap;
+   margin-bottom: 10px;
+ }
+.appearance .color-box .color-switchers{
+   display: flex;
+}
+.color-box .color-switchers .btn{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  background: #4070F4;
+
+}
+.color-switchers .btn.blue.active{
+  box-shadow: 0 0 0 2px #fff,
+              0 0 0 4px #4070F4;
+}
+.color-switchers .btn.orange{
+  background: #F79F1F;
+}
+.color-switchers .btn.orange.active{
+  box-shadow: 0 0 0 2px #fff,
+              0 0 0 4px #F79F1F;
+}
+.color-switchers .btn.purple{
+  background: #8e44ad;
+}
+.color-switchers .btn.purple.active{
+  box-shadow: 0 0 0 2px #fff,
+              0 0 0 4px #8e44Ad;
+}
+.color-switchers .btn.green{
+  background: #3A9943;
+}
+.color-switchers .btn.green.active{
+  box-shadow: 0 0 0 2px #fff,
+              0 0 0 4px #3A9943;
+}
+.home-content{
+  height: 100vh;
+  width: 100%;
+  background: var(--light-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  background-image: url(Importance-of-Blood-Donation.webp);
+  background-size: cover;
+
+}
+
+
+.home-content h2{
+  color: var(--black);
+  font-size: 50px;
+}
+.home-content h3{
+  color: var(--black);
+  font-size: 42px;
+  margin-top: -8px;
+}
+.home-content h3 span{
+  color: var(--nav-main);
+}
+.home-content h3 span.darkMode{
+  color: var(--black);
+}
+.home-content p{
+  color: var(--black);
+  font-size: 16px;
+  width: 45%;
+  text-align: justify;
+  margin: 4px 0 30px 0;
+}
+.home-content a{
+  color: #fff;
+  font-size: 20px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--nav-main);
+}
+.home-content a i{
+  transform: rotate(45deg);
+  font-size: 16px;
+}
+.home-content a:hover{
+  background: var(--switchers-main);
+}
+.top-section{
+  background-image: url(Importance-of-Blood-Donation.webp);
+  width: 100;
+  height: 100vh;
+  background-color: green;
+}
+
+
+.body-content{
+  display: flex;
+  height: inherit;
+  margin-top: 30px;
+
+}
+.body-half{
+  width: 50%;
+  padding: 100px;
+
+ 
+ 
+}
+.img{
+  width: 100%;
+ 
+}
+.body-text{
+  width: 100px;
+}
+.section-3{
+  width: 100%;
+  background-attachment: fixed;
+  background-color: white;
+  background-image: url("img.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.form-box{
+
+  margin: auto;
+  border: 3px solid red;
+  border-radius: 8px;
+  width: 70%;
+  padding: 30px;
+  
+}
+.row{
+  display: flex;
+  width: 100%;
+}
+.column{
+  width: 50%;
+}
+.form-heading{
+  border-radius: 8px;
+  background-color: lightcoral;
+  text-align: center;
+}
+.input-border{
+  border: 2px solid lightcoral;
+  border-radius: 8px;
+  width: 95%;
+}
+.submit-btn{
+  width: 100%;
+  background-color: lightcoral;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px thin ;
+}
+.form{
+  height: auto;
+}
+
+/* footer starts here */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+
+
+.footer-distributed{
+  margin-top: 10px;
+	background: red;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+}
+
+.footer-section {
+ 
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Roboto', cursive;
+	margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  white;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: #ffffff;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1050px) {
+  .home-content p{
+    width: 70%;
+  }
+}
+@media (max-width: 850px) {
+  .body-content{
+    display: block;
+  }
+  .body-half{
+    width: 100%;
+    padding: 50px;
+  }
+  .section-3{
+    width: 100%;
+    background-attachment: fixed;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .checkbtn{
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    top: 80px;
+    text-align: center;
+    transition: all .5s;
+   
+   
+    
+  }
+  @media (max-width: 700px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+    .home-content{
+      height: 100vh;
+      width: 100%;
+      background: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 60px;
+      background-image: url(Importance-of-Blood-Donation.webp);
+     
+    }
+  }
+ 
+ 
+  a.active{
+    background: none;
+  }
+  #check_on:checked ~ .nav-links {
+
+    position: absolute;
+   left: -100%;  
+  } 
+
+} 
+section{
+  background: white;
+  background-size: cover;
+  height: calc(100vh - 80vh);
+}
